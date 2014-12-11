@@ -9,7 +9,7 @@ class PlayersController < ApplicationController
 		if @player.save
 			redirect_to games_path
 		else
-			redurect_to games_path
+			redirect_to games_path
 		end
 	end
 

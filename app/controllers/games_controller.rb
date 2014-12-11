@@ -10,11 +10,14 @@ class GamesController < ApplicationController
 
 	def create
 		@game = Game.new(game_params)
-		@venue = @game.venue
 
 		if @game.save
-			@player = Player.create(user: current_user, game: @game, is_owner: true)
-			redirect_to games_path
+			@player = Player.new(user: current_user, game: @game, is_owner: true)
+			if @player.save
+				redirect_to games_path
+			else
+				render 'new'
+			end
 		else
 			render 'new'
 		end

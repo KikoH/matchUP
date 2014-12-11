@@ -14,6 +14,17 @@ class Game < ActiveRecord::Base
 	end
 
 	def challengers_count
-		players.where(is_owner: false).count
+		p = players.where(is_owner: false).count
+		required_teams - p
+	end
+
+	def is_owner(current_user)
+		players.where(is_owner: true) == current_user
+	end
+
+	def owner
+		p = players.where(is_owner: true)
+		p.email
 	end
 end
+
