@@ -8,9 +8,11 @@
 
 <h2>Available games</h2>
 <% @games.each do |game| %>
-	<p>Title: <%= game.title %> </p>
-	<p>Time: <%= game.pretty_booked_from %> TO <%= game.pretty_booked_till %> </p>
-	<p>Place: <%= game.venue.name %> </p>
-	<p>Address: <%= game.venue.address %> </p>
-	<p>Teams Required: <%= game.required_teams %> | Spots left: <%= game.required_teams %> </p>
+<p>Title: <%= game.title %> </p>
+<p>Time: <%= game.pretty_booked_from %> TO <%= game.pretty_booked_till %> </p>
+<p>Place: <%= game.venue.name %> </p>
+<p>Address: <%= game.venue.address %> </p>
+<p>Teams Required: <%= game.required_teams %> | Spots left: <%= game.required_teams %> </p>
+<button><%= link_to 'Matchup', game_path(game, :game => {challenger_id: current_user.id}), method: :patch %>
+</button>
 <% end %>

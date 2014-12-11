@@ -1,5 +1,6 @@
 class Game < ActiveRecord::Base
-	belongs_to :user
+	belongs_to :owner, class_name: "User"
+	belongs_to :challenger, class_name: "User"
 	belongs_to :venue
 
 	def pretty_booked_from

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141210224101) do
+ActiveRecord::Schema.define(version: 20141211181700) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 20141210224101) do
     t.datetime "booked_from"
     t.datetime "booked_till"
     t.integer  "required_teams"
+    t.integer  "owner_id"
+    t.integer  "challenger_id"
   end
 
   create_table "users", force: true do |t|
