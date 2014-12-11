@@ -10,4 +10,8 @@ class Game < ActiveRecord::Base
 	def pretty_booked_till
 		booked_till.strftime("%I:%M %p")
 	end
+
+	def challengers_count
+		Game.all.where(challenger_id: 2).count
+	end
 end
