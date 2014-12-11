@@ -13,6 +13,6 @@
 <p>Place: <%= game.venue.name %> </p>
 <p>Address: <%= game.venue.address %> </p>
 <p>Teams Required: <%= game.required_teams %> | Spots left: <%= (game.required_teams - game.challengers_count) %> </p>
-<button><%= link_to 'Matchup', game_path(game, :game => {challenger_id: current_user.id}), method: :patch %>
+<button><%= link_to 'Matchup', players_path(:player => {user_id: current_user.id, game_id: game.id, is_owner: false }), method: :post %>
 </button>
 <% end %>

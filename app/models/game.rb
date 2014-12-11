@@ -1,7 +1,9 @@
 class Game < ActiveRecord::Base
-	belongs_to :owner, class_name: "User"
-	belongs_to :challenger, class_name: "User"
+	# belongs_to :owner, class_name: "User"
+	# belongs_to :challenger, class_name: "User"
 	belongs_to :venue
+	has_many :players
+	has_many :users, through: :players
 
 	def pretty_booked_from
 		booked_from.strftime("%I:%M %p")
@@ -12,6 +14,6 @@ class Game < ActiveRecord::Base
 	end
 
 	def challengers_count
-		Game.all.where(challenger_id: 2).count
+		players.where(is_owner: false).count
 	end
 end

@@ -7,5 +7,6 @@ class User < ActiveRecord::Base
 
   validates :email, uniqueness: true
 
-  has_many :games
+  has_many :games, through: :players
+  has_many :players
 end
