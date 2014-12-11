@@ -1,0 +1,28 @@
+<%= form_for @game do |f| %>
+<div>
+	<%= f.label :title %><br />
+	<%= f.text_field :title %>
+</div>
+
+<div>
+	Venue: <%= collection_select(:game, :venue_id, Venue.all, :id, :name, prompt: true) %>
+</div>
+
+<div>
+	<%= f.label :booked_from %>
+	<%= f.time_select :booked_from %>
+	<br><%= f.label :booked_till %>
+	<%= f.time_select :booked_till %>
+</div>
+
+<div>
+	<%= f.label :required_teams %>
+	<%= f.number_field :required_teams %>
+</div>
+
+<div>
+	<%= f.submit %>
+</div>
+
+
+<% end %>
