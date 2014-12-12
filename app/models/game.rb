@@ -19,12 +19,11 @@ class Game < ActiveRecord::Base
 	end
 
 	def is_owner(current_user)
-		players.where(is_owner: true) == current_user
+		User.find(players.where(is_owner: true).first.user_id) == current_user
 	end
 
 	def owner
-		p = players.where(is_owner: true)
-		p.email
+		User.find(players.where(is_owner: true).first.user_id)
 	end
 end
 

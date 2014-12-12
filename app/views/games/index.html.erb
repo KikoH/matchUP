@@ -7,8 +7,9 @@
 <%= render 'form' %>
 
 <h2>Available games</h2>
+
 <% @games.each do |game| %>
-<p>Title: <%= game.title %> BY: </p>
+<p>Title: <%= game.title %> BY: <%= game.owner.email %> </p>
 <p>Time: <%= game.pretty_booked_from %> TO <%= game.pretty_booked_till %> </p>
 <p>Place: <%= game.venue.name %> </p>
 <p>Address: <%= game.venue.address %> </p>
