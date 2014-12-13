@@ -1,8 +1,8 @@
 class GamesController < ApplicationController
+	skip_before_filter :require_login, only: [:index]
 	def index
 		@games = Game.all
 		@game = Game.new
-		# User.find(@game.players.where(is_owner: true).first.user_id)
 	end
 
 	def new

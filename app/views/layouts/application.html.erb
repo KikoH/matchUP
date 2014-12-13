@@ -4,27 +4,53 @@
 	<title>Matchup</title>
 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-	<%= csrf_meta_tags %>
+  <%= javascript_include_tag "vendor/modernizr" %>
+  <%= csrf_meta_tags %>
 </head>
 <body>
 
-	<div id="nav">
-		<% if current_user %>
-		<%= link_to current_user.email, user_path(current_user) %>
-		<%= link_to "Edit Profile", edit_user_path(current_user.id) %>
-		<%= link_to "Logout", :logout, method: :post %>
-		<% else %>
-		<%= link_to "Register", new_user_path %> |
-		<%= link_to "Login", :login %>
-		<% end %>
-	</div>
-	<hr>
-	<div>
-		<p id="notice"><%= flash[:notice] %></p>
-		<p id="alert"><%= flash[:alert] %></p>
-	</div>
+  <nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+      <li class="name">
+        <h1><a href=""><%= link_to "Home", games_path %></a></h1>
+      </li>
+      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+      <!-- <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li> -->
+    </ul>
 
-	<%= yield %>
+    <section class="top-bar-section">
+      <!-- Right Nav Section -->
+      <% if current_user %>
+      <ul class="right">
+        <li class="active"><%= link_to current_user.email, user_path(current_user) %></li>
+        <li class="has-dropdown">
+          <a href="#">Profile</a>
+          <ul class="dropdown">
+            <li><%= link_to "Edit Profile", edit_user_path(current_user.id) %></li>
+            <li><%= link_to "Logout", :logout, method: :post %></li>
+            <% else %>
+            <ul class="right">
+              <li><%= link_to "Register", new_user_path %></li>
+              <li><%= link_to "Login", :login, method: :get %></li>
+            </ul>
+          </ul>
+        </li>
+      </ul>
+      <% end %>
+    </section>
+  </nav>
 
-</body>
-</html>
+  <!-- Left Nav Section -->
+      <!-- <ul class="left">
+        <li><a href="#">Left Nav Button</a></li>
+      </ul> -->
+
+      <div>
+        <p id="notice"><%= flash[:notice] %></p>
+        <p id="alert"><%= flash[:alert] %></p>
+      </div>
+
+      <%= yield %>
+
+    </body>
+    </html>

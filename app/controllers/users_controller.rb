@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 	skip_before_filter :require_login, only: [:index, :new, :create]
+
 	def show
 		@user = User.find(params[:id])
 	end
@@ -11,7 +12,8 @@ class UsersController < ApplicationController
 	def create
 		@user = User.new(user_params)
 		if @user.save
-			redirect_to new_user_path, :notice => "Successfully signed up"
+			auto_login(@user)
+			redirect_to games_path, :notice => "Successfully signed up"
 		else
 			render 'new', :notice => "Error signing up"
 		end

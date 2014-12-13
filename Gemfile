@@ -40,6 +40,9 @@ gem 'pry-rails'
 # Authentication
 gem 'sorcery'
 
-#Image uploads
+# Image uploads
 gem 'carrierwave'
 gem 'rmagick'
+
+# Foundation
+gem 'foundation-rails'
