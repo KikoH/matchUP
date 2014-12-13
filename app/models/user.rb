@@ -9,4 +9,6 @@ class User < ActiveRecord::Base
 
   has_many :games, through: :players
   has_many :players
+
+  mount_uploader :image, ImageUploader
 end

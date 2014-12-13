@@ -5,6 +5,18 @@
    <%= f.text_field :email %>
 </div>
 
+<div class="name">
+   <%= f.label :name %><br />
+   <%= f.text_field :name %>
+</div>
+
+<div class="location">
+   <%= f.label :location %><br />
+   <%= f.text_field :location %>
+</div>
+
+<p> <%= f.file_field :image %> </p>
+
 <div class="field">
    <%= f.label :password %><br />
    <%= f.password_field :password %>

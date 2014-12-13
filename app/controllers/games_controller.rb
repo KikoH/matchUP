@@ -2,8 +2,6 @@ class GamesController < ApplicationController
 	def index
 		@games = Game.all
 		@game = Game.new
-		@owners = []
-		@users = @games.each {|g| @owners << User.find(g.players.where(is_owner: true).first.user_id) }
 		# User.find(@game.players.where(is_owner: true).first.user_id)
 	end
 
@@ -36,7 +34,7 @@ class GamesController < ApplicationController
 		if @game.update_attribute(:challenger_id, current_user.id)
 			redirect_to games_path
 		else
-			redirect_to games_path
+			render 'edit'
 		end
 	end
 

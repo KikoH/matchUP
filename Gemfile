@@ -36,5 +36,10 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
+gem 'pry-rails'
+# Authentication
 gem 'sorcery'
+
+#Image uploads
+gem 'carrierwave'
+gem 'rmagick'
