@@ -4,3 +4,16 @@
 <%= image_tag @user.image_url(:thumb) %>
 <p>Name: <%= @user.name %> </p>
 <p>Location: <%= @user.location %> </p>
+
+<%= link_to "Home", games_path %>
+
+
+<h2>Upcoming matches</h2>
+
+<% @user.games.each do |game| %>
+<p> Title: <%= game.title %> </p>
+<p> Time: <%= game.pretty_booked_from %> TO <%= game.pretty_booked_till %> </p>
+<p> Place: <%= game.venue.name %> </p>
+<p> Address: <%= game.venue.address %> </p>
+<p> Teams Required: <%= game.required_teams %> </p>
+<% end %>
