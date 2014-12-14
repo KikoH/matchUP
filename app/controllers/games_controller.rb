@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-	skip_before_filter :require_login, only: [:index]
+	
 	def index
 		@games = Game.all
 		@game = Game.new
