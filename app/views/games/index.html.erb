@@ -1,27 +1,16 @@
-<h1>Main page</h1>
-
 <button class="button round">Find nearby teams</button>
 
 <div class="text-center">
-<a href="" data-reveal-id="myModal">Have a venue?</a>
 
-<div id="myModal" class="reveal-modal small" data-reveal>
-	<div><%= render 'form' %></div>
-	<a class="close-reveal-modal">&#215;</a>
-</div>
+	<div id="myModal" class="reveal-modal small" data-reveal>
+		<div> <%= render 'form' %> </div>
+		<a class="close-reveal-modal">&#215;</a>
+	</div>
+
+	<a href="" data-reveal-id="myModal">Have a venue?</a>
+
 </div>
 
 <h2>Available games</h2>
 
-<% @games.each do |game| %>
-<p>Title: <%= game.title %> BY: <%= link_to game.owner.email, user_path(game.owner) %> </p>
-<p>Time: <%= game.pretty_booked_from %> TO <%= game.pretty_booked_till %> </p>
-<p>Place: <%= game.venue.name %> </p>
-<p>Address: <%= game.venue.address %> </p>
-<p>Teams Required: <%= game.required_teams %></p>
-<% unless current_user.nil? %>
-<% unless game.is_owner(current_user) %>
-<%= button_to game.challengers_count, players_path(:player => {user_id: current_user.id, game_id: game.id, is_owner: false }) %>
-<% end %>
-<% end %>
-<% end %>
+<%= render 'game' %>
