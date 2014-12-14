@@ -1,0 +1,16 @@
+<button class="button round">Find nearby teams</button>
+
+<div class="text-center">
+
+	<div id="myModal" class="reveal-modal small" data-reveal>
+		<div> <%= render 'games/form' %> </div>
+		<a class="close-reveal-modal">&#215;</a>
+	</div>
+
+	<a href="" data-reveal-id="myModal">Have a venue?</a>
+
+</div>
+
+<h2>Available games</h2>
+
+<%= render 'games/game' %>

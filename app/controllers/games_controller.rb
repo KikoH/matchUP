@@ -15,7 +15,7 @@ class GamesController < ApplicationController
 		if @game.save
 			@player = Player.new(user: current_user, game: @game, is_owner: true)
 			if @player.save
-				redirect_to games_path
+				redirect_to homepages_path
 			else
 				render 'new'
 			end

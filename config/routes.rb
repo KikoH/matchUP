@@ -5,8 +5,9 @@ Rails.application.routes.draw do
   resources :users
   resources :games
   resources :players
+  resources :homepages
 
-  get 'home' => 'games#index', :as => :homegame
+  get 'home' => 'homepages#index', :as => :home
 
   get 'login' => 'user_sessions#new', :as => :login
   post 'logout' => 'user_sessions#destroy', :as => :logout

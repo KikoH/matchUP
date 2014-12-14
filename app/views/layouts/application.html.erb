@@ -8,11 +8,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
   <nav class="top-bar" data-topbar role="navigation">
     <ul class="title-area">
       <li class="name">
-        <h1><a href=""><%= link_to "Home", games_path %></a></h1>
+        <h1><a href=""><%= link_to "Home", home_path %></a></h1>
       </li>
       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
       <!-- <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li> -->
@@ -23,18 +22,15 @@
       <% if current_user %>
       <ul class="right">
         <li class="active"><%= link_to current_user.email, user_path(current_user) %></li>
-        <li class="has-dropdown">
-          <a href="#">Profile</a>
-          <ul class="dropdown">
+          <ul class="right">
             <li><%= link_to "Edit Profile", edit_user_path(current_user.id) %></li>
             <li><%= link_to "Logout", :logout, method: :post %></li>
-            <% else %>
-            <ul class="right">
-              <li><%= link_to "Register", new_user_path %></li>
-              <li><%= link_to "Login", :login, method: :get %></li>
-            </ul>
           </ul>
-        </li>
+          <% else %>
+          <ul class="right">
+            <li><%= link_to "Register", new_user_path %></li>
+            <li><%= link_to "Login", :login, method: :get %></li>
+          </ul>
       </ul>
       <% end %>
     </section>
