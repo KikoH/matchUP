@@ -1,4 +1,4 @@
-class User < ActiveRecord::Base
+class Team < ActiveRecord::Base
 	authenticates_with_sorcery!
 
 	validates :password, length: { minimum: 3 }

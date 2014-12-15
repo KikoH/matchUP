@@ -4,8 +4,8 @@ class HomepagesController < ApplicationController
 	def index
 		@games = Game.all
 		@game = Game.new
-		@users = User.all
-		@user = User.new
+		@teams = Team.all
+		@team = Team.new
 	end
 
 end

@@ -2,11 +2,11 @@ class UserSessionsController < ApplicationController
 	skip_before_filter :require_login, except: [:destroy]
 
 	def new
-		@user = User.new
+		@team = Team.new
 	end
 
 	def create
-		if @user = login(params[:email], params[:password])
+		if @team = login(params[:email], params[:password])
 			redirect_back_or_to(:home, notice: 'Login successful')
 		else
 			flash.now[:alert] = 'Login failed'
@@ -16,6 +16,6 @@ class UserSessionsController < ApplicationController
 
 	def destroy
 		logout
-		redirect_to(:games, notice: 'Logged out!')
+		redirect_to(:home, notice: 'Logged out!')
 	end
 end

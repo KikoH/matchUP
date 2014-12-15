@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root :to => 'games#index'
   resources :user_sessions
-  resources :users
+  resources :teams
   resources :games
   resources :players
   resources :homepages

@@ -17,7 +17,7 @@ class GamesController < ApplicationController
 		@game = Game.new(game_params)
 
 		if @game.save
-			@player = Player.new(user: current_user, game: @game, is_owner: true)
+			@player = Player.new(team: current_user, game: @game, is_owner: true)
 			if @player.save
 				redirect_to game_path(@game)
 			else
@@ -35,8 +35,8 @@ class GamesController < ApplicationController
 	def update
 		@game = Game.find(params[:id])
 
-		if @game.update_attribute(:challenger_id, current_user.id)
-			redirect_to games_path
+		if @game.update_attributes(game_params)
+			redirect_to game_path(@game)
 		else
 			render 'edit'
 		end

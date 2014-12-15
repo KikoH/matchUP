@@ -13,19 +13,21 @@
       <li class="name">
         <h1><a href=""><%= link_to "Home", home_path %></a></h1>
       </li>
-      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-      <!-- <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li> -->
     </ul>
 
     <section class="top-bar-section">
       <!-- Right Nav Section -->
       <% if current_user %>
       <ul class="right">
-        <li><%= link_to "Edit Profile", edit_user_path(current_user.id) %></li>
+        <li><%= link_to "Edit Profile", edit_team_path(current_user.id) %></li>
         <li><%= link_to "Logout", :logout, method: :post %></li>
       </ul>
       <ul class="right">
-        <li class="active"><%= link_to current_user.email, user_path(current_user) %></li>
+        <li class="active"><%= link_to current_user.email, team_path(current_user) %></li>
+      </ul>
+      <ul class="left">
+      <li><%= link_to "All Available games", games_path %></li>
+        <li></li>
       </ul>
       <ul class="left">
         <li><button class="button round">Find nearby teams</button></li>
@@ -47,12 +49,12 @@
       <% else %>
       <ul class="right">
         <li>
-            <div id="myModal" class="reveal-modal small" data-reveal>
-              <div> <%= render 'users/form' %> </div>
-              <a class="close-reveal-modal">&#215;</a>
-            </div>
+          <div id="myModal" class="reveal-modal small" data-reveal>
+            <div> <%= render 'teams/form' %> </div>
+            <a class="close-reveal-modal">&#215;</a>
+          </div>
 
-            <a href="" data-reveal-id="myModal">Register</a>
+          <a href="" data-reveal-id="myModal">Register</a>
         </li>
         <li></li>
         <li><%= link_to "Login", :login, method: :get %></li>

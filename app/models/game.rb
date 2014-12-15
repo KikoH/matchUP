@@ -1,7 +1,7 @@
 class Game < ActiveRecord::Base
 	belongs_to :venue
 	has_many :players
-	has_many :users, through: :players
+	has_many :teams, through: :players
 
 	def pretty_booked_from
 		booked_from.strftime("%I:%M %p")
@@ -17,11 +17,11 @@ class Game < ActiveRecord::Base
 	end
 
 	def is_owner(current_user)
-		User.find(players.where(is_owner: true).first.user_id) == current_user
+		Team.find(players.where(is_owner: true).first.team_id) == current_user
 	end
 
 	def owner
-		User.find(players.where(is_owner: true).first.user_id)
+		Team.find(players.where(is_owner: true).first.team_id)
 	end
 
 	def challengers
