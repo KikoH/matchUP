@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 	skip_before_filter :require_login, only: [:index, :new, :create]
+	before_filter :initializeGame
 
 	def show
 		@user = User.find(params[:id])
@@ -36,5 +37,9 @@ class UsersController < ApplicationController
 
 	def user_params
 		params.require(:user).permit(:email, :name, :location, :password, :password_confirmation, :image)
+	end
+
+	def initializeGame
+		@game = Game.new
 	end
 end

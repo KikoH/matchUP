@@ -1,6 +1,4 @@
 class Game < ActiveRecord::Base
-	# belongs_to :owner, class_name: "User"
-	# belongs_to :challenger, class_name: "User"
 	belongs_to :venue
 	has_many :players
 	has_many :users, through: :players
@@ -24,6 +22,10 @@ class Game < ActiveRecord::Base
 
 	def owner
 		User.find(players.where(is_owner: true).first.user_id)
+	end
+
+	def challengers
+		players.where(is_owner: false)
 	end
 end
 

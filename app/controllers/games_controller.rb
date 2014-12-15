@@ -1,8 +1,12 @@
 class GamesController < ApplicationController
-	
+
 	def index
 		@games = Game.all
 		@game = Game.new
+	end
+
+	def show
+		@game = Game.find(params[:id])
 	end
 
 	def new
@@ -15,7 +19,7 @@ class GamesController < ApplicationController
 		if @game.save
 			@player = Player.new(user: current_user, game: @game, is_owner: true)
 			if @player.save
-				redirect_to homepages_path
+				redirect_to game_path(@game)
 			else
 				render 'new'
 			end
