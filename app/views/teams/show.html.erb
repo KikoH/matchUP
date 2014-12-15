@@ -1,14 +1,11 @@
-<h1 class="page-title"><%= @team.email %> profile page</h1>
+<h1 class="page-title"><%= @team.name %> profile page</h1>
 
 
 <%= image_tag @team.image_url(:thumb) %>
-<p>Name: <%= @team.name %> </p>
+<p>Name: <%= @team.email %> </p>
 <p>Location: <%= @team.location %> </p>
 
-<%= link_to "Home", games_path %>
-
-
-<h2>Upcoming matches</h2>
+<h2 class="page-title">Upcoming matches</h2>
 
 <ul class="small-block-grid-3">
 	<% @team.games.each do |game| %>
