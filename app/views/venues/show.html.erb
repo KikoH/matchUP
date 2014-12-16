@@ -17,6 +17,6 @@
 	<% end %>
 </ul>
 
-
+<%= content_tag "div","", id: "map-canvas", data: {latitude: @venue.latitude.to_f, longitude: @venue.longitude.to_f} %>
 
 
