@@ -1,0 +1,22 @@
+<h1 class="page-title"><%= @venue.name %> Venue</h1>
+<p>Address: <%= @venue.address %> </p>
+
+<h3 class="page-title">Games in this venue</h1>
+
+<ul class="small-block-grid-3">
+	<% @venue.games.each do |game| %>
+	<li>
+		<div class="games">
+			<div class="title">Title: <%= game.title %> BY: <%= link_to game.owner.email, team_path(game.owner) %> </div>
+			<p>Time: <%= game.pretty_booked_from %> TO <%= game.pretty_booked_till %> </p>
+			<p>Teams Required: <%= game.required_teams %></p>
+			<p>Spots left: <%= game.challengers_count %></p>
+			<%= button_to "MatchUP", players_path(:player => {team_id: current_user.id, game_id: game.id, is_owner: false })%>
+		</div>
+	</li>
+	<% end %>
+</ul>
+
+
+
+

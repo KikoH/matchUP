@@ -1,0 +1,13 @@
+<h2>Nearby Venues</h2>
+
+<%= form_tag venues_path, method: :get do %>
+<%= label_tag :search, 'Find venues by address' %>
+<%= text_field_tag :search, params[:search] %>
+<%= submit_tag 'submit' %>
+<% end %>
+
+<button id="current-location">Find nearby venues</button>
+
+<div id="venues">
+<%= render @venues %>
+</div>

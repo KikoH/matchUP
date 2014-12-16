@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :games
   resources :players
   resources :homepages
+  resources :venues
 
   get 'home' => 'homepages#index', :as => :home
 

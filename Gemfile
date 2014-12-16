@@ -46,3 +46,6 @@ gem 'rmagick'
 
 # Foundation
 gem 'foundation-rails'
+
+# GeoCoder
+gem 'geocoder'
