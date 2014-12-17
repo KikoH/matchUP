@@ -27,5 +27,15 @@ class Game < ActiveRecord::Base
 	def challengers
 		players.where(is_owner: false)
 	end
+
+	def venue_open
+		v = Venue.find(12)
+		v.open_time.strftime("%I").to_i
+	end
+
+	def venue_close
+		v = Venue.find(12)
+		v.close_time.strftime("%I").to_i
+	end
 end
 

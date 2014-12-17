@@ -1,3 +1,7 @@
+<% @venue = Venue.find(13) %>
+<% @venue.close_time.strftime("%I").to_i %>
+<% @venue.open_time.strftime("%I").to_i %>
+
 <% @game ||= Game.new %>
 <%= form_for @game do |f| %>
 <div>
@@ -10,10 +14,8 @@
 </div>
 
 <div>
-	<%= f.label :booked_from %>
-	<%= f.time_select :booked_from %>
-	<br><%= f.label :booked_till %>
-	<%= f.time_select :booked_till %>
+	<%= f.time_select :booked_from, {start_hour: @venue.open_time.strftime("%k").to_i , end_hour: @venue.close_time.strftime("%k").to_i, minute_step: 30, ampm: true} %>
+	<%= f.time_select :booked_till, {start_hour: @venue.open_time.strftime("%k").to_i , end_hour: @venue.close_time.strftime("%k").to_i, minute_step: 30, ampm: true} %>
 </div>
 
 <div>
