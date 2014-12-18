@@ -7,21 +7,17 @@
 
 <h2 class="page-title">Upcoming matches</h2>
 
-<ul class="small-block-grid-3">
-	<% @team.games.each do |game| %>
-	<li>
-		<div class="games">
-			<div class="title"> Title: <%= game.title %> </div>
-			<p> Time: <%= game.pretty_booked_from %> TO <%= game.pretty_booked_till %> </p>
-			<p> Place: <%= game.venue.name %> </p>
-			<p> Address: <%= game.venue.address %> </p>
-			<p> Teams Required: <%= game.required_teams %> </p>
-			<h4>Challengers</h4>
-			<% game.challengers.each do |c| %>
-			<%= link_to c.team.email, team_path(c.team.id) %><br/>
-			<% end %>
-		</div>
-	</li>
+<% @team.games.each do |game| %>
+<div class="games">
+	<div class="title"> <%= game.title %> </div>
+	<p> Time: <%= game.pretty_booked_from %> TO <%= game.pretty_booked_till %> </p>
+	<p> Place: <%= game.venue.name %> </p>
+	<p> Address: <%= game.venue.address %> </p>
+	<p> Teams Required: <%= game.required_teams %> </p>
+	<h4>Challengers</h4>
+	<% game.challengers.each do |c| %>
+	<%= link_to c.team.email, team_path(c.team.id) %><br/>
 	<% end %>
-</ul>
+</div>
+<% end %>
 

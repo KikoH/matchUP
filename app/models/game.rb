@@ -24,8 +24,14 @@ class Game < ActiveRecord::Base
 		Team.find(players.where(is_owner: true).first.team_id)
 	end
 
+	def is_challenger(team)
+		challengers.include?(team)
+	end
+
 	def challengers
-		players.where(is_owner: false)
+		players.where(is_owner: false).map {|player| player.team}
+		# Team.find_all(players.where(is_owner: false).pluck(:team_id))
+
 	end
 
 	def venue_open
