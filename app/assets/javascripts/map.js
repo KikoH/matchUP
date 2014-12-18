@@ -15,7 +15,7 @@ myMap.init = function() {
 	var marker = new google.maps.Marker({
 		position: new google.maps.LatLng(latitude, longitude),
 		map: this.canvas,
-		icon: "http://mapicons.nicolasmollet.com/wp-content/uploads/mapicons/shape-default/color-ff8a22/shapecolor-color/shadow-1/border-dark/symbolstyle-white/symbolshadowstyle-dark/gradient-no/soccerfield.png"
+		icon: "images/players.png"
 	});
 };
 

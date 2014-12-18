@@ -47,3 +47,52 @@ body {
 	width: 60em;
 	height: 400em;
 }
+
+.reg-form {
+	width: 25em;
+	height: 50em;
+	margin: auto;
+	opacity: 0;
+}
+
+#email {
+	border-radius: 25px;
+}
+
+#password {
+	border-radius: 25px;
+}
+
+
+.animated { 
+    -webkit-animation-duration: 1s; 
+    animation-duration: 1s; 
+    -webkit-animation-fill-mode: both; 
+    animation-fill-mode: both; 
+} 
+
+@-webkit-keyframes fadeInDownBig { 
+    0% { 
+        opacity: 0; 
+        -webkit-transform: translateY(-2000px); 
+    } 
+    100% { 
+        opacity: 1; 
+        -webkit-transform: translateY(0); 
+    } 
+} 
+@keyframes fadeInDownBig { 
+    0% { 
+        opacity: 0; 
+        transform: translateY(-2000px); 
+    } 
+    100% { 
+        opacity: 1; 
+        transform: translateY(0); 
+    } 
+} 
+.fadeInDownBig { 
+    -webkit-animation-name: fadeInDownBig; 
+    animation-name: fadeInDownBig; 
+}
+
