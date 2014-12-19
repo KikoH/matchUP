@@ -2,7 +2,7 @@
 
 <% venue_array = @venues.map{|v| [v.name, v.latitude.to_f, v.longitude.to_f]} %>
 
-<%#= content_tag "div","", id: "map-canvas", data: {latitude: request.location.latitude, longitude: request.location.longitude, venues: venue_array} %>
+<%= content_tag "div","",id: "locations", data: {venues: venue_array} %>
 
 <div id="map-canvas"></div>
 
