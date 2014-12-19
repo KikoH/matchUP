@@ -1,5 +1,11 @@
 <h2>Nearby Venues</h2>
 
+<% venue_array = @venues.map{|v| [v.name, v.latitude.to_f, v.longitude.to_f]} %>
+
+<%#= content_tag "div","", id: "map-canvas", data: {latitude: request.location.latitude, longitude: request.location.longitude, venues: venue_array} %>
+
+<div id="map-canvas"></div>
+
 <%= form_tag venues_path, method: :get do %>
 <%= label_tag :search, 'Find venues by address' %>
 <%= text_field_tag :search, params[:search] %>

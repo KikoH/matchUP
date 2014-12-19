@@ -14,8 +14,7 @@ myMap.init = function() {
 
 	var marker = new google.maps.Marker({
 		position: new google.maps.LatLng(latitude, longitude),
-		map: this.canvas,
-		icon: "images/players.png"
+		map: this.canvas
 	});
 };
 
