@@ -17,8 +17,8 @@
 			Spots left: <% game.challengers_count.times do %>
 			<img src="<%= asset_path('soccer.png') %>">
 			<% end %>
-			<%= button_to "MatchUP", players_path(:player => {team_id: current_user.id, game_id: game.id, is_owner: false })%>
 		</div>
+			<%= link_to "MatchUP", players_path(:player => {team_id: current_user.id, game_id: game.id, is_owner: false }), class: "button tiny"%>
 	</li>
 	<% end %>
 </ul>

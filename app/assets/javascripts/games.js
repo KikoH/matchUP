@@ -9,7 +9,7 @@ $(document).on('ready page:load', function() {
 		var self = $(this);
 		var form = self.closest('form');
 		var gamesDiv = self.parents('li').find('div.games');
-		gamesDiv.toggleClass("animatedT tada")
+		gamesDiv.toggleClass("animated tada")
 			.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
 				form.submit();
 			});

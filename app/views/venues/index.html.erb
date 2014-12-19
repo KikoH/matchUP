@@ -1,19 +1,28 @@
-<h2>Nearby Venues</h2>
-
-<% venue_array = @venues.map{|v| [v.name, v.latitude.to_f, v.longitude.to_f]} %>
+<% venue_array = @venues.map{|v| [v.name, v.address, v.pretty_open_time, v.pretty_close_time, v.latitude.to_f, v.longitude.to_f]} %>
 
 <%= content_tag "div","",id: "locations", data: {venues: venue_array} %>
 
-<div id="map-canvas"></div>
+
+
 
 <%= form_tag venues_path, method: :get do %>
-<%= label_tag :search, 'Find venues by address' %>
-<%= text_field_tag :search, params[:search] %>
-<%= submit_tag 'submit' %>
+		<%= label_tag :search, 'Find venues by address' %>
+		<%= text_field_tag :search, params[:search] %>
+		<%= submit_tag 'submit' %>
 <% end %>
 
-<button id="current-location">Find nearby venues</button>
+
+
+
+
+
+<button id="current-location">Filter by nearby</button>
 
 <div id="venues">
-<%= render @venues %>
+	<%= render @venues %>
 </div>
+
+
+<button class="text-center" id="show_on_map">Show on Map</button>
+
+<div id="map-canvas" style="width:700px; height:500px;" class="animated fadeInLeftBig"></div>

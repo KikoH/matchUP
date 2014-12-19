@@ -2,14 +2,15 @@
 <html>
 <head>
 	<title>Matchup</title>
-	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-	<%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{Rails.application.secrets.google_maps_api}" %>
+  <link rel="stylesheet" href="assets/animate.min.css">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{Rails.application.secrets.google_maps_api}" %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag "vendor/modernizr" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="contain-to-grid fixed">
+<div class="contain-to-grid">
   <nav class="top-bar" data-topbar role="navigation">
     <ul class="title-area">
       <li class="name">
@@ -61,10 +62,6 @@
   </nav>
   </div>
 
-  <!-- Left Nav Section -->
-      <!-- <ul class="left">
-        <li><a href="#">Left Nav Button</a></li>
-      </ul> -->
 
       <div>
         <p id="notice"><%= flash[:notice] %></p>
@@ -72,6 +69,5 @@
       </div>
 
       <%= yield %>
-
     </body>
     </html>
