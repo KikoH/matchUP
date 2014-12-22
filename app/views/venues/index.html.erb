@@ -1,14 +1,17 @@
-<% venue_array = @venues.map{|v| [v.name, v.address, v.pretty_open_time, v.pretty_close_time, v.latitude.to_f, v.longitude.to_f]} %>
+<% venue_array = @venues.map{|v| [v.name, v.address, v.pretty_open_time, v.pretty_close_time, v.latitude.to_f, v.longitude.to_f, venue_path(v)]} %>
 
 <%= content_tag "div","",id: "locations", data: {venues: venue_array} %>
 
+<div id="map-canvas" style="width:700px; height:500px;"></div>
 
 
+
+<a href=""></a>
 
 <%= form_tag venues_path, method: :get do %>
-		<%= label_tag :search, 'Find venues by address' %>
-		<%= text_field_tag :search, params[:search] %>
-		<%= submit_tag 'submit' %>
+<%= label_tag :search, 'Find venues by address' %>
+<%= text_field_tag :search, params[:search] %>
+<%= submit_tag 'submit' %>
 <% end %>
 
 
@@ -18,11 +21,25 @@
 
 <button id="current-location">Filter by nearby</button>
 
+
+<% @venues.each do |ven| %>
 <div id="venues">
-	<%= render @venues %>
+<table>
+  <thead>
+    <tr>
+      <th width="200">Venue name</th>
+      <th>Address</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= link_to ven.name, venue_path(ven) %></td>
+      <td><%= ven.address %></td>
+    </tr>
+  </tbody>
+</table>
+
+
+<% end %>
 </div>
 
-
-<button class="text-center" id="show_on_map">Show on Map</button>
-
-<div id="map-canvas" style="width:700px; height:500px;" class="animated fadeInLeftBig"></div>

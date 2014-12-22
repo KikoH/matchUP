@@ -1,9 +1,10 @@
 <h1 class="page-title"><%= @team.name %> profile page</h1>
 
-
+<div id="profile">
 <%= image_tag @team.image_url(:thumb) %>
-<p>Name: <%= @team.email %> </p>
+<p>Email: <%= @team.email %> </p>
 <p>Location: <%= @team.location %> </p>
+</div>
 
 <h2 class="page-title">Upcoming matches</h2>
 

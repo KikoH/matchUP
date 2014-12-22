@@ -60,3 +60,36 @@ body {
 #password {
 	border-radius: 25px;
 }
+
+#welcome {
+	background-color: black;
+	width: 840px;
+	height: 540px;
+	margin: 80px auto;
+	opacity: 0.8;
+	text-align: center;
+	border-radius: 14px;
+}
+
+#profile {
+	background-color: black;
+	width: 350px;
+	height: 200px;
+	margin: 20px auto;
+	opacity: 0.8;
+	text-align: center;
+	border-radius: 14px;
+}
+
+p {
+	color: white;
+	font-size: 20px;
+}
+
+.venue-container {
+	width: 200px;
+	height: 50px;
+	border: 2px solid black;
+	margin-left: 40px;
+	background-color: white;
+}

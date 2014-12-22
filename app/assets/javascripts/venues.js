@@ -4,6 +4,7 @@ function geolocationSuccess(position) {
 
 	$('.location-error').hide();
 	$('#current-location').html('Find nearby venues').removeAttr('disabled');
+
 	$.ajax({
 		url: "/venues",
 		method: 'GET',
@@ -31,6 +32,15 @@ $(document).on('ready page:load', function() {
 			alert("Not a compatible browser");
 		}
 	});
+
+	$('#search').on('submit', function(e) {
+		e.preventDefault();
+		if ('geolocation' in navigator) {
+			navigator.geolocation.getCurrentPosition(geolocationSuccess, geolocationError);
+			} else {
+			alert("Not a compatible browser");
+		}
+	});
 });
 
 function initialize(position) {
@@ -43,10 +53,8 @@ function initialize(position) {
 		center: new google.maps.LatLng(latitude, longitude),
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	};
-	var map2 = new google.maps.Map(document.getElementById('map-canvas'),
+	this.canvas = new google.maps.Map(document.getElementById('map-canvas'),
 		mapOptions);
-
-
 
 	var infowindow = new google.maps.InfoWindow();
 
@@ -55,31 +63,24 @@ function initialize(position) {
 	for (i = 0; i < locations.length; i++) {
 		marker = new google.maps.Marker({
 			position: new google.maps.LatLng(locations[i][4], locations[i][5]),
-			map: map2
+			map: this.canvas
 		});
 
 		google.maps.event.addListener(marker, 'click', (function(marker, i) {
-			if (infowindow) infowindow.close();
 			return function() {
-				infowindow.setContent("<p>" + locations[i][0] + "<br/>" + locations[i][1] + "<br />" + "Hours: " + locations[i][2] + "To" + locations[i][3] + "</p>");
-				infowindow.open(map2, marker);
+				infowindow.setContent("<p>" + "<a href=' "+locations[i][6]+ "'>" + locations[i][0]+"</a>" + "<br/>" + locations[i][1] + "<br />" + "Hours: " + locations[i][2] + "To" + locations[i][3] + "</p>");
+				infowindow.open(map, marker);
 			}
 		})(marker, i));
 	}
 }
 
 $(document).on('ready page:load', function() {
-	$('#map-canvas').hide();
-	$('#show_on_map').on('click', function(e){
 	if ('geolocation' in navigator) {
 		navigator.geolocation.getCurrentPosition(initialize, geolocationError);
 	} else {
 		alert("Not a compatible browser");
 	}
-		e.preventDefault();
-		$('#map-canvas').show();
-	});
-
 });
 
 
