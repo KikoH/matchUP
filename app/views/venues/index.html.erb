@@ -1,6 +1,6 @@
 <% venue_array = @venues.map{|v| [v.name, v.address, v.pretty_open_time, v.pretty_close_time, v.latitude.to_f, v.longitude.to_f, venue_path(v)]} %>
 
-<%= content_tag "div","",id: "locations", data: {venues: venue_array} %>
+<%= content_tag "div","",id: "locations", data: {venues: venue_array, allvenues: true} %>
 
 <div id="map-canvas" style="width:700px; height:500px;"></div>
 

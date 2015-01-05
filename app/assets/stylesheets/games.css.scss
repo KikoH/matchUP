@@ -1,5 +1,5 @@
 .games {
-	background-image: url("field.jpg");
+	background-image: url("http://storage.googleapis.com/matchupimages/field.jpg");
 	background-repeat: round;
 	background-color: green;
 	border: 2px solid;
@@ -30,7 +30,7 @@
 }
 
 body {
-	background-image: url("football.jpg");
+	background-image: url("http://storage.googleapis.com/matchupimages/football.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
@@ -82,7 +82,7 @@ body {
 }
 
 p {
-	color: white;
+	color: yellow;
 	font-size: 20px;
 }
 

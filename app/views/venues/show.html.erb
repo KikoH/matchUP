@@ -18,7 +18,7 @@
 			<p>Time: <%= game.pretty_booked_from %> TO <%= game.pretty_booked_till %> </p>
 			<p>Teams Required: <%= game.required_teams %></p>
 			Spots left: <% game.challengers_count.times do %>
-			<img src="<%= asset_path('soccer.png') %>">
+			<img src="<%= asset_path('http://storage.googleapis.com/matchupimages/soccer.png') %>">
 			<% end %>
 		</div>
 		<% if game.is_owner(current_user) %>

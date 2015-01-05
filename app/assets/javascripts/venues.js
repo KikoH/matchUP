@@ -37,41 +37,47 @@ $(document).on('ready page:load', function() {
 		e.preventDefault();
 		if ('geolocation' in navigator) {
 			navigator.geolocation.getCurrentPosition(geolocationSuccess, geolocationError);
-			} else {
+		} else {
 			alert("Not a compatible browser");
 		}
 	});
 });
 
 function initialize(position) {
-	var latitude = position.coords.latitude;
-	var longitude = position.coords.longitude;
-	var locations = $('#locations').data('venues');
+	var isVenues = $('#locations').data('allvenues');
+	
+	if (isVenues == true) {
 
-	var mapOptions = {
-		zoom: 11,
-		center: new google.maps.LatLng(latitude, longitude),
-		mapTypeId: google.maps.MapTypeId.ROADMAP
-	};
-	this.canvas = new google.maps.Map(document.getElementById('map-canvas'),
-		mapOptions);
+		var latitude = position.coords.latitude;
+		var longitude = position.coords.longitude;
+		var locations = $('#locations').data('venues');
 
-	var infowindow = new google.maps.InfoWindow();
+		var mapOptions = {
+			zoom: 11,
+			center: new google.maps.LatLng(latitude, longitude),
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		};
 
-	var marker, i;
+		var map = new google.maps.Map(document.getElementById('map-canvas'),
+			mapOptions);
 
-	for (i = 0; i < locations.length; i++) {
-		marker = new google.maps.Marker({
-			position: new google.maps.LatLng(locations[i][4], locations[i][5]),
-			map: this.canvas
-		});
+		var infowindow = new google.maps.InfoWindow();
 
-		google.maps.event.addListener(marker, 'click', (function(marker, i) {
-			return function() {
-				infowindow.setContent("<p>" + "<a href=' "+locations[i][6]+ "'>" + locations[i][0]+"</a>" + "<br/>" + locations[i][1] + "<br />" + "Hours: " + locations[i][2] + "To" + locations[i][3] + "</p>");
-				infowindow.open(map, marker);
-			}
-		})(marker, i));
+		var marker, i;
+
+		for (i = 0; i < locations.length; i++) {
+			marker = new google.maps.Marker({
+				position: new google.maps.LatLng(locations[i][4], locations[i][5]),
+				map: map
+			});
+
+			google.maps.event.addListener(marker, 'click', (function(marker, i) {
+				return function() {
+					infowindow.setContent("<p>" + "<a href=' "+locations[i][6]+ "'>" + locations[i][0]+"</a>" + "<br/>" + locations[i][1] + "<br />" + "Hours: " + locations[i][2] + "To" + locations[i][3] + "</p>");
+					infowindow.open(map, marker);
+				}
+			})(marker, i));
+		}
 	}
 }
 
@@ -82,7 +88,3 @@ $(document).on('ready page:load', function() {
 		alert("Not a compatible browser");
 	}
 });
-
-
-
-
