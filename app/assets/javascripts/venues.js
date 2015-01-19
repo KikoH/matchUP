@@ -45,7 +45,7 @@ $(document).on('ready page:load', function() {
 
 function initialize(position) {
 	var isVenues = $('#locations').data('allvenues');
-	
+
 	if (isVenues == true) {
 
 		var latitude = position.coords.latitude;
@@ -87,4 +87,25 @@ $(document).on('ready page:load', function() {
 	} else {
 		alert("Not a compatible browser");
 	}
+});
+
+$(document).on('ready page:load', function() {
+	$('#game_venue_id').change(function(){
+		var venueId = $("#game_venue_id").find("option:selected").attr('value');
+	});
+
+	$('#venue_search').submit(function(event) {
+		event.preventDefault();
+		var searchValue = $('#search').val();
+
+		$.ajax({
+			url: '/venues',
+			type: 'GET',
+			data: {
+				search: searchValue
+			},
+			dataType: 'script'
+		});
+
+	});
 });

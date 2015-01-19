@@ -8,7 +8,7 @@
 
 <a href=""></a>
 
-<%= form_tag venues_path, method: :get do %>
+<%= form_tag venues_path, id: "venue_search", method: :get do %>
 <%= label_tag :search, 'Find venues by address' %>
 <%= text_field_tag :search, params[:search] %>
 <%= submit_tag 'submit' %>
@@ -22,24 +22,7 @@
 <button id="current-location">Filter by nearby</button>
 
 
-<% @venues.each do |ven| %>
 <div id="venues">
-<table>
-  <thead>
-    <tr>
-      <th width="200">Venue name</th>
-      <th>Address</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><%= link_to ven.name, venue_path(ven) %></td>
-      <td><%= ven.address %></td>
-    </tr>
-  </tbody>
-</table>
-
-
-<% end %>
+  <%= render @venues %>
 </div>
 

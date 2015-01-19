@@ -11,7 +11,7 @@ class Game < ActiveRecord::Base
 		booked_till.strftime("%I:%M %p")
 	end
 
-	def challengers_count
+	def remaining_challengers
 		p = players.where(is_owner: false).count
 		required_teams - p
 	end
@@ -21,7 +21,7 @@ class Game < ActiveRecord::Base
 	end
 
 	def owner
-		Team.find(players.where(is_owner: true).first.team_id)
+		players.where(is_owner: true).first
 	end
 
 	def is_challenger(team)

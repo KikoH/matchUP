@@ -1,1 +1,14 @@
-<%= link_to venue.name, venue_path(venue) %>
+<table>
+  <thead>
+    <tr>
+      <th width="200">Venue name</th>
+      <th>Address</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= link_to venue.name, venue_path(venue) %></td>
+      <td><%= venue.address %></td>
+    </tr>
+  </tbody>
+</table>
