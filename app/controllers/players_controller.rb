@@ -5,8 +5,12 @@ class PlayersController < ApplicationController
 
 	def create
 		@player = Player.new(player_params)
+		@game = @player.game
+		@owner = @game.players.where(is_owner: true).first
 
 		if @player.save
+			UserMailer.matchup_email(@owner, @player).deliver
+
 			redirect_to games_path
 		else
 			redirect_to games_path

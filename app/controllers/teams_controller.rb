@@ -13,6 +13,8 @@ class TeamsController < ApplicationController
 	def create
 		@team = Team.new(team_params)
 		if @team.save
+			UserMailer.welcome_email(@team).deliver
+
 			auto_login(@team)
 			redirect_to games_path, :notice => "Successfully signed up"
 		else

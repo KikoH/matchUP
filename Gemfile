@@ -49,3 +49,7 @@ gem 'foundation-rails'
 
 # GeoCoder
 gem 'geocoder'
+
+group :development do 
+	gem 'letter_opener'
+end
