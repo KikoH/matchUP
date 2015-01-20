@@ -4,8 +4,26 @@
 	background-color: green;
 	border: 2px solid;
 	border-radius: 25px;
-	text-align: center;
 	color: white;
+	margin-top: 50px;
+	margin-left: 150px;
+	margin-right: 150px;
+	text-align: center;
+}
+
+body {
+	max-width: 100%;
+	height: 100%;
+	background-image: url("http://storage.googleapis.com/matchupimages/ok-1.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+#venue_search {
+	width: 400px;
+	text-align: center;
+	margin: auto;
 }
 
 .matchup {
@@ -25,15 +43,16 @@
 
 .page-title {
 	text-align: center;
-	width: 400px;
+	width: 550px;
 	margin: auto;
 }
 
-body {
-	background-image: url("http://storage.googleapis.com/matchupimages/football.jpg");
+#homepageBackground {
+	max-width: 100%;
+	height: 100%;
+	background-image: url("http://storage.googleapis.com/matchupimages/ehe.png");
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-attachment: fixed;
 }
 
 .buttonTo {
@@ -61,29 +80,25 @@ body {
 	border-radius: 25px;
 }
 
-#welcome {
-	background-color: black;
-	width: 840px;
-	height: 540px;
-	margin: 80px auto;
-	opacity: 0.8;
+p {
+	font-size: 20px;
 	text-align: center;
-	border-radius: 14px;
+}
+
+#welcome {
+	margin: 500px auto;
+	text-align: center;
+	color: black;
 }
 
 #profile {
-	background-color: black;
+	background-color: green;
 	width: 350px;
-	height: 200px;
-	margin: 20px auto;
-	opacity: 0.8;
+	height: 350px;
+	margin: 50px auto;
+	opacity: 0.9;
 	text-align: center;
 	border-radius: 14px;
-}
-
-p {
-	color: yellow;
-	font-size: 20px;
 }
 
 .venue-container {
@@ -92,4 +107,11 @@ p {
 	border: 2px solid black;
 	margin-left: 40px;
 	background-color: white;
+	text-align: center;
+}
+
+#venues {
+	width: 600px;
+	margin: auto;
+	text-align: center;
 }

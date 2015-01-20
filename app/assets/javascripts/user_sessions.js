@@ -3,7 +3,11 @@
 
 $(document).on('ready page:load', function() {
 	$("#animated-example").hide();
+
 	$("#login").click(function(){
-		$("#animated-example").show();
+		$("#animated-example").show().css({
+			'position': "absolute",
+			'margin': '35px 500px'
+		});
 	});
 });

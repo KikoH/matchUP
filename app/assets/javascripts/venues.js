@@ -24,6 +24,10 @@ function geolocationError() {
 
 
 $(document).on('ready page:load', function() {
+	$('#current-location').css({
+		'width': '240px',
+		'margin-left': '600px'
+	});
 	$('#current-location').on('click', function() {
 		if ('geolocation' in navigator) {
 			$('#current-location').html('Searching...').attr('disabled', 'disabled');

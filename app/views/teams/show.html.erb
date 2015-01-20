@@ -1,4 +1,6 @@
-<h1 class="page-title"><%= @team.name %> profile page</h1>
+<div>
+<h1 class="page-title"><%= @team.name %>'s profile page</h1>
+</div>
 
 <div id="profile">
 <%= image_tag @team.image_url(:thumb) %>
@@ -6,7 +8,9 @@
 <p>Location: <%= @team.location %> </p>
 </div>
 
+<div>
 <h2 class="page-title">Upcoming matches</h2>
+</div>
 
 <% @team.games.each do |game| %>
 <div class="games">
