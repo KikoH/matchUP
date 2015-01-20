@@ -57,7 +57,7 @@ function initialize(position) {
 		var locations = $('#locations').data('venues');
 
 		var mapOptions = {
-			zoom: 11,
+			zoom: 10,
 			center: new google.maps.LatLng(latitude, longitude),
 			mapTypeId: google.maps.MapTypeId.ROADMAP
 		};

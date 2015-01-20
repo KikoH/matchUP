@@ -1,8 +1,14 @@
 <div class="games">
-	<div class="title"><h1> <%= @game.title %> </h1></div>
+	<div> <h1 class="title"> <%= @game.title %> </h1></div>
 	<p>Time: <%= @game.pretty_booked_from %> TO <%= @game.pretty_booked_till %> </p>
 	<p> Place: <%= @game.venue.name %> </p>
 	<p>Address: <%= @game.venue.address %> </p>
 	<p>Teams Required: <%= @game.required_teams %></p>
-	<p>Spots left: <%= @game.remaining_challengers %></p>
+	Spots left: <% @game.remaining_challengers.times do %>
+	<img src="<%= asset_path('http://storage.googleapis.com/matchupimages/soccer.png') %>">
+	<% end %>
+	<p>Challengers</p>
+	<% @game.challengers.each do |c| %>
+	<%= link_to c.team.name, team_path(c.team.id) %><br/>
+	<% end %>
 </div>

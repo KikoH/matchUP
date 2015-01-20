@@ -12,6 +12,7 @@
 }
 
 body {
+	margin-top: 20px;
 	max-width: 100%;
 	height: 100%;
 	background-image: url("http://storage.googleapis.com/matchupimages/ok-1.png");
@@ -44,7 +45,11 @@ body {
 .page-title {
 	text-align: center;
 	width: 550px;
-	margin: auto;
+	margin: 50px auto;
+}
+
+.title {
+	color: white;
 }
 
 #homepageBackground {
@@ -94,11 +99,14 @@ p {
 #profile {
 	background-color: green;
 	width: 350px;
-	height: 350px;
+	height: 280px;
 	margin: 50px auto;
-	opacity: 0.9;
 	text-align: center;
 	border-radius: 14px;
+}
+
+.round alert label {
+	background: blue;
 }
 
 .venue-container {
