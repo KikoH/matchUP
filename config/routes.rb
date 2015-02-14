@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root :to => 'games#index'
+  root :to => 'homepages#index'
   resources :user_sessions
   resources :teams
   resources :games
