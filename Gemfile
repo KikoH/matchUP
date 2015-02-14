@@ -42,6 +42,9 @@ gem 'pry-rails'
 # Authentication
 gem 'sorcery'
 
+#actionMailer
+gem "mail", "2.5.4"
+
 # Image uploads
 gem 'carrierwave'
 gem 'rmagick'
