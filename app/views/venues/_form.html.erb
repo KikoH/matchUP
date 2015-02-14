@@ -1,0 +1,20 @@
+<%= form_for @venue do |f| %>
+<div>
+	<%= f.label :name %> <br/>
+	<%= f.text_field :name %>
+</div>
+
+<div>
+	<%= f.label :address %>
+	<%= f.text_field :address %>
+</div>
+
+<div>
+	Open time: <%= f.time_select :open_time, {start_hour: @venue.open_time , end_hour: @venue.close_time, discard_minute: true, ampm: true} %>
+	Close time:<%= f.time_select :close_time, {start_hour: @venue.open_time , end_hour: @venue.close_time, discard_minute: true, ampm: true} %>
+</div>
+
+<div>
+	<%= f.submit %>
+</div>
+<% end %>
