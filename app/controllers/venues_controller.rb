@@ -1,4 +1,6 @@
 class VenuesController < ApplicationController
+	skip_before_filter :require_login
+	
 	def new
 		@venue = Venue.new
 	end
