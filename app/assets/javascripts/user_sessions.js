@@ -6,8 +6,7 @@ $(document).on('ready page:load', function() {
 
 	$("#login").click(function(){
 		$("#animated-example").show().css({
-			'position': "absolute",
-			'margin': '35px 500px'
+			'position': "absolute"
 		});
 	});
 });

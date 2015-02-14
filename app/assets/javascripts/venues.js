@@ -96,6 +96,8 @@ $(document).on('ready page:load', function() {
 $(document).on('ready page:load', function() {
 	$('#game_venue_id').change(function(){
 		var venueId = $("#game_venue_id").find("option:selected").attr('value');
+		//make a $.ajax request for Venue
+			//-> Put this part in .js.erb $('#time_fields').html('<%= render partial: '_time_fields');
 	});
 
 	$('#venue_search').submit(function(event) {

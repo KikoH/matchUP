@@ -11,7 +11,7 @@
 		<p> At: <%= link_to game.venue.name, venue_path(game.venue) %> </p>
 		<p>Teams Required: <%= game.required_teams %></p>
 		Spots left: <% game.remaining_challengers.times do %>
-		<img src="<%= asset_path('http://storage.googleapis.com/matchupimages/soccer.png') %>">
+		<img src="<%= asset_path('https://s3-us-west-2.amazonaws.com/kikomatchup/soccer.png') %>">
 	<% end %>
 		</div>
 			<% if game.is_owner(current_user) %>
