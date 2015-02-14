@@ -64,16 +64,6 @@ Rails.application.configure do
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
 
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-  address:              'smtp.gmail.com',
-  port:                 587,
-  domain:               'https://pure-taiga-8764.herokuapp.com',
-  user_name:            '<kiiko87@gmail.com>',
-  password:             '<kiko0987>',
-  authentication:       'plain',
-  enable_starttls_auto: true  }
-
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
 
