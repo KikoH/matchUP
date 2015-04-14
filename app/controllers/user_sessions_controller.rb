@@ -9,8 +9,8 @@ class UserSessionsController < ApplicationController
 		if @team = login(params[:email], params[:password])
 			redirect_back_or_to(:games)
 		else
-			flash.now[:alert] = 'Login failed'
-			render action: 'new'
+			flash.now[:alert] = 'Login failed. Try again'
+			render 'new'
 		end
 	end
 

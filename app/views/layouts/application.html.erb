@@ -10,64 +10,66 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="fixed">
-  <nav class="top-bar" data-topbar role="navigation">
-    <ul class="title-area">
-      <li class="name">
-        <h1><a href=""><%= link_to "Home", home_path %></a></h1>
-      </li>
-    </ul>
+<div id="backgroundmain"></div>
 
-    <section class="top-bar-section">
-      <!-- Right Nav Section -->
-      <% if current_user %>
-      <ul class="right">
-        <li><%= link_to "Edit Profile", edit_team_path(current_user.id) %></li>
-        <li><%= link_to "Logout", :logout, method: :post %></li>
+  <div class="fixed">
+    <nav class="top-bar" data-topbar role="navigation">
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href=""><%= link_to "Home", home_path %></a></h1>
+        </li>
       </ul>
-      <ul class="right">
-        <li class="active"><%= link_to current_user.email, team_path(current_user) %></li>
-      </ul>
-      <ul class="left">
-      <li><%= link_to "All Available games", games_path %></li>
-        <li></li>
-      </ul>
-      <ul class="left">
-        <li> <%= link_to 'All venues', venues_path %> </li>
-      </ul>
-      <ul class="left">
-        <li>
+
+      <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <% if current_user %>
+        <ul class="right">
+          <li><%= link_to "Edit Profile", edit_team_path(current_user.id) %></li>
+          <li><%= link_to "Logout", :logout, method: :post %></li>
+        </ul>
+        <ul class="right">
+          <li class="active"><%= link_to current_user.email, team_path(current_user) %></li>
+        </ul>
+        <ul class="left">
+          <li><%= link_to "All Available games", games_path %></li>
+          <li></li>
+        </ul>
+        <ul class="left">
+          <li> <%= link_to 'All venues', venues_path %> </li>
+        </ul>
+        <ul class="left">
+          <li>
             <div id="myModal" class="reveal-modal small" data-reveal>
               <div> <%= render 'games/form' %> </div>
               <a class="close-reveal-modal">&#215;</a>
             </div>
 
             <a href="" data-reveal-id="myModal">Have a venue?</a>
-        </li>
-      </ul>
-      <% else %>
-      <ul class="right">
-        <li>
-          <div id="myModal" class="reveal-modal small" data-reveal>
-            <div> <%= render 'teams/form' %> </div>
-            <a class="close-reveal-modal">&#215;</a>
-          </div>
+          </li>
+        </ul>
+        <% else %>
+        <ul class="right">
+          <li>
+            <div id="myModal" class="reveal-modal small" data-reveal>
+              <div> <%= render 'teams/form' %> </div>
+              <a class="close-reveal-modal">&#215;</a>
+            </div>
 
-          <a href="" data-reveal-id="myModal">Register</a>
-        </li>
-        <li><a id="login">Login</a></li>
-      </ul>
-      <% end %>
-    </section>
-  </nav>
+            <a href="" data-reveal-id="myModal">Register</a>
+          </li>
+          <li><a id="login">Login</a></li>
+        </ul>
+        <% end %>
+      </section>
+    </nav>
   </div>
 
 
-      <div>
-        <p id="notice"><%= flash[:notice] %></p>
-        <p id="alert"><%= flash[:alert] %></p>
-      </div>
+  <div>
+    <p id="notice"><%= flash[:notice] %></p>
+    <p id="alert"><%= flash[:alert] %></p>
+  </div>
 
-      <%= yield %>
-    </body>
-    </html>
+  <%= yield %>
+</body>
+</html>

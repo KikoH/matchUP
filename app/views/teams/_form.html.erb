@@ -1,41 +1,64 @@
 <% @team ||= Team.new %>
 <%= form_for @team do |f| %>
 <form>
-   <div class="row">
-     <div class="large-4 columns">
-      <label>Email: 
-       <%= f.text_field :email, placeholder: 'Email' %>
-    </label>
- </div>
-</div>
-<div class="row">
-  <div class="large-4 columns">
-   <label>Username: 
-    <%= f.text_field :name, placeholder: 'Username' %>
- </label>
-</div>
-</div>
-<div class="row">
-  <div class="large-4 columns">
-   <label>Location: 
-    <%= f.text_field :location, placeholder: 'Location' %>
- </label>
-</div>
-</div>
-<div class="row">
-  <div class="large-4 columns">
-   <label>Password:
-    <%= f.password_field :password, placeholder: 'Password' %>
- </label>
-</div>
-<div class="large-4 columns">
-   <label>Password confirmation:
-    <%= f.password_field :password_confirmation, placeholder: 'Password confirmation' %>
- </label>
-</div>
-<%= f.file_field :image %>
-</div>
+  <div class="row">
+    <div class="small-8 columns">
+      <div class="row">
+        <div class="small-3 columns">
+          <label for="right-label" class="right inline">Email:</label>
+        </div>
+        <div class="small-9 columns">
+          <%= f.text_field :email, placeholder: 'Email' %>
+        </div>
+      </div>
 
-<%= f.submit %>
-<% end %>
+      <div class="row">
+        <div class="small-3 columns">
+          <label for="right-label" class="right inline">Username:</label>
+        </div>
+        <div class="small-9 columns">
+          <%= f.text_field :name, placeholder: 'Username' %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="small-3 columns">
+          <label for="right-label" class="right inline">Location:</label>
+        </div>
+        <div class="small-9 columns">
+          <%= f.text_field :location, placeholder: 'Location' %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="small-3 columns">
+          <label for="right-label" class="right inline">Password:</label>
+        </div>
+        <div class="small-9 columns">
+          <%= f.password_field :password, placeholder: 'Password' %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="small-3 columns">
+        <label for="right-label" class="right inline">Confirm:</label>
+        </div>
+        <div class="small-9 columns">
+          <%= f.password_field :password_confirmation, placeholder: 'Password confirmation' %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="small-3 columns">
+          <label for="right-label" class="right inline">Avatar:</label>
+        </div>
+        <div class="small-9 columns">
+          <%= f.file_field :image %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <%= f.submit %>
+  <% end %>
 </form>
