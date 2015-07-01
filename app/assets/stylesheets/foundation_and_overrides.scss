@@ -1365,12 +1365,12 @@ $topbar-bg-color: #006F34;
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
-// $topbar-height: 45px;
+$topbar-height: 60px;
 // $topbar-margin-bottom: 0;
 
 // Controlling the styles for the title in the top bar
 // $topbar-title-weight: $font-weight-normal;
-// $topbar-title-font-size: rem-calc(17);
+$topbar-title-font-size: rem-calc(22);
 
 // Style the top bar dropdown elements
 // $topbar-dropdown-bg: $oil;
@@ -1387,7 +1387,7 @@ $topbar-bg-color: #006F34;
 // $topbar-link-color-active: $white;
 // $topbar-link-color-active-hover: $white;
 // $topbar-link-weight: $font-weight-normal;
-// $topbar-link-font-size: rem-calc(13);
+$topbar-link-font-size: rem-calc(17);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
 // $topbar-link-bg: $topbar-bg;
 // $topbar-link-bg-color-hover: $charcoal;
@@ -1421,7 +1421,7 @@ $topbar-bg-color: #006F34;
 // Transitions and breakpoint styles
 // $topbar-transition-speed: 300ms;
 // Using rem-calc for the below breakpoint causes issues with top bar
-$topbar-breakpoint: 9999px; // Change to 9999px for always mobile layout
+// $topbar-breakpoint: 9999px; // Change to 9999px for always mobile layout
 // $topbar-media-query: $medium-up;
 
 // Divider Styles
