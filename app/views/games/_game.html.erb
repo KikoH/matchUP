@@ -1,27 +1,27 @@
-<ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-2 text-center">
-
 <% @games.each do |game| %>
+<ul class="small-block-grid-1 medium-block-grid-1 large-block-grid-1 text-center">
+
 	<% unless current_user.nil? %>
 	<% if game.remaining_challengers > 0 %>
 	<li class="a">
-	<div class="games">
-		<% if game.is_owner(current_user) %><span class="round alert label">Your match</span><% end%>
-		<h4> <%= link_to game.title, game_path(game) %> <%#= game.owner.team.email %> </h4>
-		<p> <%= game.pretty_booked_from %> - <%= game.pretty_booked_till %> </p>
-		<p> At: <%= link_to game.venue.name, venue_path(game.venue) %> </p>
-		<p>Teams Required: <%= game.required_teams %></p>
-		Spots left: <% game.remaining_challengers.times do %>
-		<img src="https://s3-us-west-2.amazonaws.com/kikomatchup/soccer.png">
-	<% end %>
-		</div>
-			<% if game.is_owner(current_user) %>
-			<% elsif game.is_challenger(current_user) %>
-				<span style="font-size: 20px" class="success label round">MatchUP email sent. Waiting for reply</span>
-			<% else %>
-				<%= button_to "MatchUP", players_path(:player => {team_id: current_user.id, game_id: game.id, is_owner: false }), {:class => "button round success matchup" } %>
+		<div class="games">
+			<% if game.is_owner(current_user) %><span class="round alert label">Your match</span><% end%>
+			<h4> <%= link_to game.title, game_path(game) %> <%#= game.owner.team.email %> </h4>
+			<p> <%= game.pretty_booked_from %> - <%= game.pretty_booked_till %> </p>
+			<p> At: <%= link_to game.venue.name, venue_path(game.venue) %> </p>
+			<p>Teams Required: <%= game.required_teams %></p>
+			Spots left: <% game.remaining_challengers.times do %>
+			<img src="https://s3-us-west-2.amazonaws.com/kikomatchup/soccer.png">
 			<% end %>
+		</div>
+		<% if game.is_owner(current_user) %>
+		<% elsif game.is_challenger(current_user) %>
+		<span style="font-size: 20px" class="success label round">MatchUP email sent. Waiting for reply</span>
+		<% else %>
+		<%= button_to "MatchUP", players_path(:player => {team_id: current_user.id, game_id: game.id, is_owner: false }), {:class => "button round success matchup" } %>
+		<% end %>
 	</li>
 	<% end %>
 	<% end %>
-<% end %>
 </ul>
+<% end %>

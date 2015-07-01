@@ -1,12 +1,11 @@
 .games {
 	background-image: url("https://s3-us-west-2.amazonaws.com/kikomatchup/field.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
 	background-color: green;
 	border: 2px solid;
 	border-radius: 25px;
 	color: white;
-	margin-top: 50px;
-	margin-left: 150px;
-	margin-right: 150px;
 	text-align: center;
 }
 
@@ -18,15 +17,15 @@ body {
 #backgroundmain {
 	z-index: -99;
 	position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("https://s3-us-west-2.amazonaws.com/kikomatchup/backgroundmain.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100%;
-    opacity: 0.2;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url("https://s3-us-west-2.amazonaws.com/kikomatchup/backgroundmain.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100%;
+	opacity: 0.2;
 }
 
 #animated-example {
@@ -41,131 +40,159 @@ body {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
-}*/
+	}*/
 
-#venue_search {
-	width: 400px;
-	text-align: center;
-	margin: auto;
-}
+	#venue_search {
+		width: 400px;
+		text-align: center;
+		margin: auto;
+	}
 
-.matchup {
-	width: 200px;
-	text-align: center;
-}
+	.matchup {
+		width: 200px;
+		text-align: center;
+	}
 
-.game {
-	background-color: white;
-	border: 2px solid;
-	border-radius: 25px;
-	text-align: center;
-	width: 700px;
-	height: 300px;
-	margin:  150px auto;
-}
+	.game {
+		background-color: white;
+		border: 2px solid;
+		border-radius: 25px;
+		text-align: center;
+		width: 700px;
+		height: 300px;
+		margin:  150px auto;
+	}
 
-.page-title {
-	text-align: center;
-	width: 550px;
-	margin: 50px auto;
-}
+	.page-title {
+		text-align: center;
+		width: 550px;
+		margin: 50px auto;
+	}
 
-.title {
-	color: white;
-}
+	.title {
+		color: white;
+	}
 
-#homepage {
-	max-width: 90%;
-	height: 90%;
-	margin: 5% auto 0 auto;
-}
+	#homepage {
+		max-width: 90%;
+		height: 90%;
+		margin: 5% auto 0 auto;
+	}
 
-#intro {
-	position: relative;
-	width: 500px;
-	height: 500px;
-	background-color: black;
-	opacity: 0.7;
-	margin: auto;
-	border-radius: 20%;
-	z-index: -20;
-}
+	#intro {
+		position: relative;
+		width: 500px;
+		height: 500px;
+		background-color: black;
+		opacity: 0.7;
+		margin: auto;
+		border-radius: 20%;
+		z-index: -20;
+		text-align: center;
+		color: green;
+	}
 
-#intro h2 {
-	text-align: center;
-	color: green;
-}
+	@media only screen and (max-width: 600px) {
+		#intro {
+			display: block;
+			width: 350px;
+			height: 500px;
+			margin: auto;
+		}
 
-#intro p {
-	text-align: center;
-	color: white;
-	margin: 10% 7% 10% 7%;
-}
+		#map-canvas {
+			width: 300px !important;
+			height: 300px !important;
+			margin: auto;
+		}
+	}
 
-.challengers {
-	color: blue;
-}
+	#intro h2 {
+		position: absolute;
+		margin: auto;
+		color: green;
+		margin: 5% 12% 10% 12%;
+	}
 
-.buttonTo {
-	background-color: red;
-}
+	#intro p {
+		position: absolute;
+		text-align: center;
+		color: white;
+		margin: 20% 7% 10% 7%;
+	}
 
-#map-canvas {
-	width: 300px;
-	height: 300px;
-	margin: auto;
-}
+	.challengers {
+		color: blue;
+	}
 
-.reg-form {
-	width: 25em;
-	height: 50em;
-	margin: auto;
-	opacity: 0;
-}
+	.buttonTo {
+		background-color: red;
+	}
 
-#email {
-	border-radius: 25px;
-}
+	#map-canvas {
+		width: 700px;
+		height: 500px;
+		margin: auto;
+	}
 
-#password {
-	border-radius: 25px;
-}
+	.reg-form {
+		width: 25em;
+		height: 50em;
+		margin: auto;
+		opacity: 0;
+	}
 
-p {
-	font-size: 20px;
-	text-align: center;
-}
+	#email {
+		border-radius: 25px;
+	}
 
-#welcome {
-	margin: 500px auto;
-	text-align: center;
-	color: black;
-}
+	#password {
+		border-radius: 25px;
+	}
 
-#profile {
-	background-color: green;
-	width: 350px;
-	height: 280px;
-	margin: 50px auto;
-	text-align: center;
-	border-radius: 14px;
-}
+	p {
+		font-size: 20px;
+		text-align: center;
+	}
 
-.round alert label {
-	background: blue;
-}
+	#welcome {
+		margin: 500px auto;
+		text-align: center;
+		color: black;
+	}
 
-.venue-container {
-	width: 200px;
-	height: 50px;
-	border: 2px solid black;
-	margin-left: 40px;
-	background-color: white;
-	text-align: center;
-}
+	#profile {
+		background-color: green;
+		width: 350px;
+		height: 280px;
+		margin: 50px auto;
+		text-align: center;
+		border-radius: 14px;
+	}
 
-#venues {
-	width: 600px;
-	margin: auto;
-	text-align: center;
-}
+	.round alert label {
+		background: blue;
+	}
+
+	.venue-container {
+		width: 200px;
+		height: 50px;
+		border: 2px solid black;
+		margin-left: 40px;
+		background-color: white;
+		text-align: center;
+	}
+
+	#venues {
+		text-align: center;
+	}
+
+	#venues table {
+		display: inline-block;
+	}
+
+	#current-location {
+		width: 300px;
+		margin: auto;
+		display: block;
+	}

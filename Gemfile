@@ -49,7 +49,10 @@ gem "mail", "2.5.4"
 gem 'carrierwave'
 gem 'rmagick'
 
-# Foundation
+#Bootstrap
+gem 'bootstrap-sass', '~> 3.3.4'
+
+#Foundation
 gem 'foundation-rails'
 
 # GeoCoder
