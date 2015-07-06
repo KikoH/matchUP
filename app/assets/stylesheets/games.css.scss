@@ -191,6 +191,10 @@ body {
 			margin: 2% auto 0 auto;
 		}
 
+		.page-title {
+			width: 300px;
+		}
+
 		#intro {
 			display: block;
 			width: 100%;
@@ -214,5 +218,14 @@ body {
 			width: 300px !important;
 			height: 300px !important;
 			margin: auto;
+		}
+
+		#search {
+			width: 300px;
+		}
+
+		.reply {
+			width: 100%;
+			font-size: 16px !important;
 		}
 	}
