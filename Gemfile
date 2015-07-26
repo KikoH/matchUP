@@ -27,6 +27,7 @@ gem 'spring',        group: :development
 
 gem 'rails_12factor'
 
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -48,6 +49,7 @@ gem "mail", "2.5.4"
 # Image uploads
 gem 'carrierwave'
 gem 'rmagick'
+gem 'fog-aws'
 
 #Bootstrap
 gem 'bootstrap-sass', '~> 3.3.4'
