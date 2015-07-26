@@ -49,7 +49,7 @@ gem "mail", "2.5.4"
 # Image uploads
 gem 'carrierwave'
 gem 'rmagick'
-gem 'fog-aws'
+gem "fog", "~> 1.3.1"
 
 #Bootstrap
 gem 'bootstrap-sass', '~> 3.3.4'
