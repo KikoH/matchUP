@@ -60,6 +60,9 @@ gem 'foundation-rails'
 # GeoCoder
 gem 'geocoder'
 
+#Thin
+gem 'thin'
+
 group :development do 
 	gem 'letter_opener'
 end
