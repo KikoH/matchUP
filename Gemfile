@@ -63,6 +63,10 @@ gem 'geocoder'
 #Thin
 gem 'thin'
 
+
+#Figaro
+gem "figaro"
+
 group :development do 
 	gem 'letter_opener'
 end
